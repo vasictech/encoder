@@ -1,0 +1,12 @@
+{
+    "name": "vasictech/encoder",
+    "description": "Video encoding with laravel",
+    "authors": [
+        {
+            "name": "Aleksandar Vasic",
+            "email": "info@vasictech.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
