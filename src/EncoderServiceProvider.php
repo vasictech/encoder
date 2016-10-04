@@ -14,7 +14,8 @@ class EncoderServiceProvider extends ServiceProvider
     public function boot()
     {
         include __DIR__.'/routes.php';
-        $this->publishConfig();
+
+        $this->publishes([__DIR__.'/../config/encoder.php' => config_path('encoder.php')], 'config');
     }
 
     /**
@@ -24,24 +25,5 @@ class EncoderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfig();
-
-    }
-
-    private function mergeConfig()
-    {
-        $path = $this->getConfigPath();
-        $this->mergeConfigFrom($path, 'encoder');
-    }
-
-    private function publishConfig()
-    {
-        $path = $this->getConfigPath();
-        $this->publishes([$path => config_path('encoder.php')], 'config');
-    }
-
-    private function getConfigPath()
-    {
-        return __DIR__ . '/../config/encoder.php';
     }
 }

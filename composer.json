@@ -1,6 +1,9 @@
 {
     "name": "vasictech/encoder",
-    "description": "Video encoding with laravel",
+    "type": "library",
+    "description": "Laravel package for encoding video files using FFMpeg",
+    "keywords": ["video processing", "video", "audio processing", "audio", "ffmpeg", "encoding"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Aleksandar Vasic",
