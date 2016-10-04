@@ -1,25 +1,26 @@
 <?php
 
-namespace VasicTech\Encoder\Encoder;
+namespace VasicTech\Encoder;
 
-class FFMpeg extends Encoder {
-
-    public function build(){
+class FFMpeg extends Encoder
+{
+    public function build()
+    {
         $config = config('encoder.ffmpeg');
 
         $this->encoder = 'ffmpeg';
         $this->config = $config;
         $this->path = $config['path'];
 
-        if(empty($this->vcodec) || empty($this->acodec)) {
+        if (empty($this->vcodec) || empty($this->acodec)) {
             $this->codecs();
         }
 
-        if(!$this->strict) {
+        if (!$this->strict) {
             $this->strict();
         }
 
-        if(!$this->replace) {
+        if (!$this->replace) {
             $this->replace();
         }
 
@@ -29,25 +30,25 @@ class FFMpeg extends Encoder {
             $this->command .= ' -b:v '.$this->vbitrate;
         }
 
-        if(!empty($this->abitrate)) {
+        if (!empty($this->abitrate)) {
             $this->command .= ' -b:a '.$this->abitrate;
         }
 
-        if(!empty($this->width) || !empty($this->height)) {
+        if (!empty($this->width) || !empty($this->height)) {
             $width = !empty($this->width) ? $this->width : '-1';
             $height = !empty($this->height) ? $this->height : '-1';
 
             $this->command .= " -vf scale=$width:$height";
         }
 
-        if(!empty($this->replace)) {
+        if (!empty($this->replace)) {
             $this->command .= ' -y';
         }
-        if($this->strict) {
+        if ($this->strict) {
             $this->command .= ' -strict -2 ';
         }
 
-        if(!empty($this->format)) {
+        if (!empty($this->format)) {
             $this->command .= ' -f '.$this->format;
         }
 

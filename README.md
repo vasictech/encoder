@@ -19,7 +19,7 @@ The recommended way to install Encoder is through [Composer](https://getcomposer
     }
 }
 ```
- 
+
 Register package as service in config/app.php
 
 ```php
