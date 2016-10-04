@@ -29,4 +29,3 @@ install:
   - composer update --prefer-source $COMPOSER_FLAGS
 
 script:
-  - vendor/bin/phpunit --verbose
