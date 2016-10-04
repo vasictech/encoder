@@ -1,7 +1,5 @@
 #Laravel Encoder (Alpha) 1.0
 
-[![Build Status](https://travis-ci.org/vasictech/encoder.svg?branch=master)](https://travis-ci.org/vasictech/encoder)
-
 An OOP Laravel package user for encoding video files with [FFMPEG](https://www.ffmpeg.org/)
 
 Package is currently in Alpha stage, with small amount of functions, and it will be constanly upgrade with a lot different features
