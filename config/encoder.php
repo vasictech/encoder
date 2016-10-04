@@ -14,6 +14,6 @@ return [
             'replace' => true,
             'fork'    => true,
             'log'     => storage_path(),
-        ]
-    ]
+        ],
+    ],
 ];

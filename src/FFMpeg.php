@@ -26,7 +26,7 @@ class FFMpeg extends Encoder
 
         $this->command = $this->path.' -i '.$this->input.' -c:v '.$this->vcodec.' -c:a '.$this->acodec;
 
-        if(!empty($this->vbitrate)) {
+        if (!empty($this->vbitrate)) {
             $this->command .= ' -b:v '.$this->vbitrate;
         }
 

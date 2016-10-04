@@ -95,7 +95,7 @@ abstract class Encoder
         return $this;
     }
 
-    abstract function build();
+    abstract public function build();
 
     private function jobId()
     {
